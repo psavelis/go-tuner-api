@@ -28,7 +28,7 @@ func getKey(frequency float64) int {
 	return int(12*math.Log2(frequency/temperingHz) + 49)
 }
 
-func (s *service) Find(frequencyInHz float64) (entity.StandardNote, error) {
+func (s *service) Execute(frequencyInHz float64) (entity.StandardNote, error) {
 	key := getKey(frequencyInHz)
 
 	note, err := s.repository.Find(key)
