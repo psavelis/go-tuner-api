@@ -1,19 +1,25 @@
 # go-tuner-api
-### How to run
+## 1. How to run 🚀
 
+Running the API using docker-compose
 ```sh
-# Run the API without docker-compose
+docker-compose up
+```
+
+
+Running the API without Docker
+```sh
 $ go run cmd/main.go 
-
-# Success output:
-> [GIN-debug] Listening and serving HTTP on :8080
 ```
 
-### Using `/tune/:frequency` endpoint
+
+## 2. Using the tune endpoint 🎵
+Easily use the `/tune/:frequency` endpoint
 ```sh
-curl http://localhost:8080/tune/440
+# example for retrieving a Note from 110.1Hz
+curl http://localhost:3000/tune/110.1
 ```
-Sample response:
+🎶 Sample response:
 
 ```json
 {
@@ -28,10 +34,14 @@ Sample response:
 }
 ```
 
-`TODO:`
-  - gRPC Adapter (NTH)
-  - WebSocket Adapter (NTH)
-  - Dockerfile (MUST)
-  - Docker-compose (MUST)
-  - Unit and Integration tests (MUST)
-  
+------
+
+### TODO:
+Status | Feature
+:---:| ---
+⬜️| gRPC Adapter (NTH)
+⬜️| WebSocket Adapter (NTH)
+✅| Dockerfile
+✅| Docker-compose
+⬜️| Unit and Integration tests (MUST)
+
