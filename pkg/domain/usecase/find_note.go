@@ -20,14 +20,6 @@ func New(repository ports.NoteRepository) ports.FindNoteByFrequency {
 	return &usecase{repository: repository}
 }
 
-func getFrequency(key int) float64 {
-	return temperingHz * math.Pow(2, (float64(key)-49)/12)
-}
-
-func getKey(frequency float64) int {
-	return int(12*math.Log2(frequency/temperingHz) + 49)
-}
-
 func (uc *usecase) Execute(frequencyInHz float64) (entity.StandardNote, error) {
 	key := getKey(frequencyInHz)
 
@@ -49,4 +41,12 @@ func (uc *usecase) Execute(frequencyInHz float64) (entity.StandardNote, error) {
 	fmt.Println(frequencyInHz, "Hz =>", strings.Split(note.Name, "/")[0])
 
 	return note, nil
+}
+
+func getFrequency(key int) float64 {
+	return temperingHz * math.Pow(2, (float64(key)-49)/12)
+}
+
+func getKey(frequency float64) int {
+	return int(12*math.Log2(frequency/temperingHz) + 49)
 }
