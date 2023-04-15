@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/psavelis/go-tuner-api/pkg/adapter/http"
-	"github.com/psavelis/go-tuner-api/pkg/adapter/repository"
 	"github.com/psavelis/go-tuner-api/pkg/domain/usecase"
+	"github.com/psavelis/go-tuner-api/pkg/infra/handler/http"
+	"github.com/psavelis/go-tuner-api/pkg/infra/repository/memory"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 }
 
 func getRouter() *gin.Engine {
-	noteRepository := repository.NewInMemoryNotesRepository()
+	noteRepository := memory.NewInMemoryNotesRepository()
 	findNoteUseCase := usecase.New(noteRepository)
 	httpHandler := http.NewHTTPHandler(findNoteUseCase)
 
