@@ -6,7 +6,7 @@ type InMemoryNotesRepository struct {
 	notes map[int]entity.StandardNote
 }
 
-func NewInMemoryNotesRepository() *InMemoryNotesRepository {
+func New() *InMemoryNotesRepository {
 	return &InMemoryNotesRepository{
 		notes: map[int]entity.StandardNote{},
 	}

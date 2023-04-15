@@ -12,12 +12,12 @@ import (
 // For more info about why I chose 432Hz as the tempering frequency, see: https://www.izotope.com/en/learn/tuning-standards-explained.html
 const temperingHz = 432
 
-type service struct {
+type usecase struct {
 	repository ports.NoteRepository
 }
 
 func New(repository ports.NoteRepository) ports.FindNoteByFrequency {
-	return &service{repository: repository}
+	return &usecase{repository: repository}
 }
 
 func getFrequency(key int) float64 {
@@ -28,10 +28,10 @@ func getKey(frequency float64) int {
 	return int(12*math.Log2(frequency/temperingHz) + 49)
 }
 
-func (s *service) Execute(frequencyInHz float64) (entity.StandardNote, error) {
+func (uc *usecase) Execute(frequencyInHz float64) (entity.StandardNote, error) {
 	key := getKey(frequencyInHz)
 
-	note, err := s.repository.Find(key)
+	note, err := uc.repository.Find(key)
 
 	if err != nil {
 		return entity.StandardNote{}, entity.ErrNoteNotFound

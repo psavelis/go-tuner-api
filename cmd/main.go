@@ -14,9 +14,9 @@ func main() {
 }
 
 func getRouter() *gin.Engine {
-	noteRepository := memory.NewInMemoryNotesRepository()
+	noteRepository := memory.New()
 	findNoteUseCase := usecase.New(noteRepository)
-	httpHandler := http.NewHTTPHandler(findNoteUseCase)
+	httpHandler := http.New(findNoteUseCase)
 
 	router := gin.New()
 	router.GET("/tune/:frequency", httpHandler.Handle)
