@@ -16,8 +16,8 @@ $ go run cmd/main.go
 ## 2. Using the tune endpoint 🎵
 Easily use the `/tune/:frequency` endpoint
 ```sh
-# example for retrieving a Note from 110.1Hz
-curl http://localhost:3000/tune/110.1
+# example for retrieving a Note from 440.1Hz
+curl http://localhost:3000/tune/440.1
 ```
 🎶 Sample response:
 
