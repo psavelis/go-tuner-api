@@ -1,7 +1,7 @@
 package ports
 
-import domain "github.com/psavelis/go-tuner-api/pkg/domain/entity"
+import "github.com/psavelis/go-tuner-api/pkg/domain/entity"
 
 type NoteRepository interface {
-	Find(key int) (domain.StandardNote, error)
+	Find(key int) (entity.StandardNote, error)
 }
