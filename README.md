@@ -1,4 +1,7 @@
 # go-tuner-api
+[![Golang](https://img.shields.io/badge/language-go-blue.svg)](https://img.shields.io/badge/language-go-blue.svg)
+[![Hexagonal](https://img.shields.io/badge/hexagonal-architechture-purple.svg)](https://img.shields.io/badge/hexagonal-architecture-purple.svg)
+
 ## 1. How to run 🚀
 
 Running the API using docker-compose
