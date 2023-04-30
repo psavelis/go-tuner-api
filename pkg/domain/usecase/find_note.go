@@ -12,15 +12,15 @@ import (
 // For more info about why I chose 432Hz as the tempering frequency, see: https://www.izotope.com/en/learn/tuning-standards-explained.html
 const temperingHz = 432
 
-type usecase struct {
+type findNoteUseCase struct {
 	repository ports.NoteRepository
 }
 
-func New(repository ports.NoteRepository) ports.FindNoteByFrequency {
-	return &usecase{repository: repository}
+func NewFindNoteUseCase(repository ports.NoteRepository) ports.FindNoteByFrequency {
+	return &findNoteUseCase{repository: repository}
 }
 
-func (uc *usecase) Execute(frequencyInHz float64) (entity.StandardNote, error) {
+func (uc *findNoteUseCase) Execute(frequencyInHz float64) (entity.StandardNote, error) {
 	key := getKey(frequencyInHz)
 
 	note, err := uc.repository.Find(key)

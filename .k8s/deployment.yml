@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-tuner-api
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      name: go-tuner-api
+  template:
+    metadata:
+      labels: 
+        name: go-tuner-api
+    spec:
+      containers:
+      - name: go-tuner-api
+        image: psavelis/go-tuner-api:c79c
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 3000
