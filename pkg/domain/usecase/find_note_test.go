@@ -12,7 +12,7 @@ func TestGetFrequency(t *testing.T) {
 		Name: "A4",
 	}, nil)
 
-	findNoteUseCase := usecase.New(noteRepository)
+	findNoteUseCase := usecase.NewFindNoteUseCase(noteRepository)
 
 	standardNote, err := findNoteUseCase.Execute(440)
 	if err != nil {

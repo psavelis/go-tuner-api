@@ -11,7 +11,7 @@ type HTTPHandler struct {
 	inPort ports.FindNoteByFrequency
 }
 
-func New(inPort ports.FindNoteByFrequency) *HTTPHandler {
+func NewHTTPHandler(inPort ports.FindNoteByFrequency) *HTTPHandler {
 	return &HTTPHandler{inPort: inPort}
 }
 
