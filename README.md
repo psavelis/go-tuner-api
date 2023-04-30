@@ -1,6 +1,7 @@
 # go-tuner-api
 [![Golang](https://img.shields.io/badge/language-go-blue.svg)](https://img.shields.io/badge/language-go-blue.svg)
-[![Hexagonal](https://img.shields.io/badge/hexagonal-architechture-purple.svg)](https://img.shields.io/badge/hexagonal-architecture-purple.svg)
+![AudioProcessing](https://img.shields.io/badge/domain-audio%20processing-green.svg)
+![Ports and Adapters](https://img.shields.io/badge/architecture-ports%20and%20adapters-purple.svg)
 
 ## 1. How to run 🚀
 
@@ -42,9 +43,11 @@ curl http://localhost:3000/tune/440.1
 ### TODO:
 Status | Feature
 :---:| ---
-⬜️| gRPC Adapter (NTH)
-⬜️| WebSocket Adapter (NTH)
+⬜️| gRPC Adapter
 ✅| Dockerfile
 ✅| Docker-compose
-⬜️| Unit and Integration tests (MUST)
+✅| K8s deployment
+✅| Automated deploy
+✅| Unit tests
+
 
