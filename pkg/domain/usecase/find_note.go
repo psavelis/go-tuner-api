@@ -38,8 +38,18 @@ func (uc *findNoteUseCase) Execute(frequencyInHz float64) (entity.StandardNote, 
 	note.Frequency = entity.FrequencyRange{Min: min + boundary, Max: max - boundary}
 	note.PitchPerfect = exact
 
-	fmt.Println(frequencyInHz, "Hz =>", strings.Split(note.Name, "/")[0])
+	note.GaugePercent = 50 + ((frequencyInHz - exact) / (max - exact)) * 50
 
+	if (frequencyInHz > exact) {
+		note.GaugePercent = 50 - ((exact - frequencyInHz) / (exact - min)) * 50
+	}
+
+	if (note.GaugePercent > 100) {
+		note.GaugePercent -= 100
+	}
+
+	fmt.Println(frequencyInHz, "Hz =>", strings.Split(note.Name, "/")[0], "Gauge =>", note.GaugePercent, "%")
+ 
 	return note, nil
 }
 

@@ -40,14 +40,20 @@ curl http://localhost:3000/tune/440.1
 
 ------
 
-### TODO:
+## Roadmap 📈:
 Status | Feature
 :---:| ---
-⬜️| gRPC Adapter
 ✅| Dockerfile
 ✅| Docker-compose
 ✅| K8s deployment
 ✅| Automated deploy
 ✅| Unit tests
+⬜️| gRPC Adapter
+⬜️| App (frontend client) `(wip)`
 
+<br />
 
+## Sample client use case 🔍:
+* UC01 - Dummy Nextjs client application through browser's `AudioContext` (`MediaStreamSource` and `FFT`) input
+
+<img src="https://raw.githubusercontent.com/psavelis/go-tuner-api/main/.samples/Screen%20Shot%202023-05-01%20at%2019.33.24.png" alt="sample client">

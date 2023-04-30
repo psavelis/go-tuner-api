@@ -1,6 +1,11 @@
 package memory
 
-import "github.com/psavelis/go-tuner-api/pkg/domain/entity"
+import (
+	"fmt"
+
+	"github.com/psavelis/go-tuner-api/pkg/domain/entity"
+)
+
 
 type InMemoryNotesRepository struct {
 	notes map[int]entity.StandardNote
@@ -19,7 +24,7 @@ func (r *InMemoryNotesRepository) Find(key int) (entity.StandardNote, error) {
 		return entity.StandardNote{}, entity.ErrNoteNotFound
 	}
 
-	res := entity.StandardNote{ID: string(rune(key)), Name: name, KeyNumber: key}
+	res := entity.StandardNote{ID: fmt.Sprint(key), Name: name, KeyNumber: key}
 
 	return res, nil
 }

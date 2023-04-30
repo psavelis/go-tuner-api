@@ -8,6 +8,7 @@ type StandardNote struct {
 	KeyNumber    int            `json:"keyNumber"`
 	Frequency    FrequencyRange `json:"frequency"`
 	PitchPerfect float64        `json:"pitchPerfect"`
+	GaugePercent float64     		`json:"gaugePercent"`
 }
 
 type FrequencyRange struct {
